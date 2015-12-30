@@ -2,20 +2,20 @@
 
 How to use the AutoCompleteField?
 
-1. You must have a TableModel that hold your object value.
+You must have a TableModel that hold your object value.
 
 see https://github.com/mirzaakhena/swing-basetablemodel for more information about how to declare BaseTableModel
 
-2. Declare the AutoCompleteField
+Declare the AutoCompleteField
 
      private AutoCompleteField<Person> autoCompleteField;
     
-3. instanciate the autocompleteField then set the searchable method.
+instanciate the autocompleteField then set the searchable method.
 
      autoCompleteField = new AutoCompleteField<>();
      autoCompleteField.setSearchable(this, new PersonTableModel());
     
-4. implement the Searchable interface in your class. 
+implement the Searchable interface in your class. 
 
 	public class MainFrame extends JFrame implements Searchable<Person> {
     
