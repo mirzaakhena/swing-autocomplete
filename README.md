@@ -8,36 +8,42 @@ see https://github.com/mirzaakhena/swing-basetablemodel for more information abo
 
 Declare the AutoCompleteField
 
-     private AutoCompleteField<Person> autoCompleteField;
-    
+```
+private AutoCompleteField<Person> autoCompleteField;
+```
+
 instanciate the autocompleteField then set the searchable method.
 
-     autoCompleteField = new AutoCompleteField<>();
-     autoCompleteField.setSearchable(this, new PersonTableModel());
-    
+```
+autoCompleteField = new AutoCompleteField<>();
+autoCompleteField.setSearchable(this, new PersonTableModel());
+```
+
 implement the Searchable interface in your class. 
 
-	public class MainFrame extends JFrame implements Searchable<Person> {
+```
+public class MainFrame extends JFrame implements Searchable<Person> {
     
-	    @Override
-		public List<Person> search(String value) {
-			List<Person> persons = personDao.findByName(value);
-			return persons;
-		}
+  @Override
+  public List<Person> search(String value) {
+    List<Person> persons = personDao.findByName(value);
+    return persons;
+  }
 	
-		@Override
-		public String getStringValue(Person x) {
-			return x.getName();
-		}
+  @Override
+  public String getStringValue(Person x) {
+    return x.getName();
+  }
 	
-		@Override
-		public void selectEvent(Person x) {
-			if (x != null) {
-				label.setText(x.getName() + ":" + x.getId());
-			} else {
-				label.setText("");
-			}
-		}
-   
+  @Override
+  public void selectEvent(Person x) {
+    if (x != null) {
+      label.setText(x.getName() + ":" + x.getId());
+    } else {
+      label.setText("");
+    }
+  }
+}
+```
 
 That's all you need to set up to have a AutoCompleteField
