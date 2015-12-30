@@ -18,6 +18,8 @@ import javax.swing.SwingUtilities;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
+import com.mirzaakhena.swing.basetablemodel.BaseTableModel;
+
 /**
  * 
  * The MIT License (MIT)
